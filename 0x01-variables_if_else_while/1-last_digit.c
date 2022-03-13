@@ -1,10 +1,9 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 /**
- * main - Entry point
- * Description:print the last digit of a number
- * Return: Always zero (0)
+ * main - Entry point of program
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
