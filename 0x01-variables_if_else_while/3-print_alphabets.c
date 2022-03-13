@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * main - Entry point of the program
- * print the alphabeth in lower case and upper case, 
+ * print the alphabeth in lower case and upper case also new line
  * Return: Always 0 (Success)
  */
 int main(void)
