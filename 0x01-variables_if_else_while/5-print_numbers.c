@@ -6,10 +6,8 @@
 int main(void)
 {
 int i;
-for (1 = 0; 1 < 10; 1 = 1 + 1)
-{
+for (i = 0; i < 10; i = i + 1)
 printf("%d", i);
-}
 putchar('\n');
 return (0);
 }
