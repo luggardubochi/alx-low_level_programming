@@ -7,9 +7,12 @@
  */
 int main(void)
 {
-int ch:
-for (ch = 'z'; ch >= 'a'; ch--)
+char ch:
+ch = 'z';
+do {
 putchar(ch);
+ch--;
+} while (ch >= 'a');
 putchar('\n');
 return (0);
 }
