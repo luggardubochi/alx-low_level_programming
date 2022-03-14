@@ -13,7 +13,7 @@ putchar(x + '0');
 if (x < 9)
 {
 putchar(',');
-putchar('');
+putchar(' ');
 }
 }
 putchar('\n');
