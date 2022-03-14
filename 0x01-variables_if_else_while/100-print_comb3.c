@@ -11,7 +11,7 @@ int z;
 x = 0;
 while (x < 100)
 {
-y = x / 10; 
+y = x / 10;
 z = x % 10;
 if (y < z)
 {
