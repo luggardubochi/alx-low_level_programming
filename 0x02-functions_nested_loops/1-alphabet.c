@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-for (ch = 'a'; ch <= 'z'; ch++)
+for (char = 'a'; char <= 'z'; char++)
 _putchar(ch);
 _putchar('\n');
 return (0);
