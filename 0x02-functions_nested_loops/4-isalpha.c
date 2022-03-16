@@ -1,6 +1,7 @@
 #include "main.h"
 /**
- * main - Entry of code
+ * _isalpha -alphabet case checker. Return 1 if true and 0 if false
+ * @c: integer parameter
  * Return: Returns value
  */
 int _isalpha(int c)

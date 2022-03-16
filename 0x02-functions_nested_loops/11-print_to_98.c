@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * main - Entry of code
- * print_to_98
+ * print_to_98 - prints all natural numbers from n to 98
+ * @n: interger param
  */
 void print_to_98(int n)
 {

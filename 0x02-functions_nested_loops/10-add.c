@@ -1,6 +1,8 @@
 #include "main.h"
 /**
- * main - Entry into program
+ * add - adds two integers
+ * @i: int param1
+ * @j: int param2
  * return: returns the added value
  */
 int add(int i, int j)
