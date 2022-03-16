@@ -1,8 +1,9 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * times_table - printing the 9 times table starting with 0
  */
-void time_table(void)
+void times_table(void)
 {
 int i, j, mul;
 for (i = 0; i <= 9; i++)
