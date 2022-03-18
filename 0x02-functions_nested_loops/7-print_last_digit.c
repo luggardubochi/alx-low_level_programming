@@ -5,13 +5,17 @@
  * @i: integer param
  * Return: return 0
  */
-int print_last_digit(int i)
+int print_last_digit(int n)
 {
-i = i % 10;
-if (i < 0)
+int last_digit = n % 10;
+if (last_digit < 0)
 {
-i = -1;
+_putchar(-last_digit + 48);
+return (-last_digit)
 }
-_putchar(i + '0');
-return (i);
+else
+{
+_putchar(last_digit + 48);
+return (last_digit);
+}
 }
