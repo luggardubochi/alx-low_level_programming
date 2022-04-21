@@ -1,0 +1,1 @@
+ A c program on link, link are data or pointer cointaining a chunk of data
