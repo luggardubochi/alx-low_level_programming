@@ -1,5 +1,0 @@
-#ignore .exe files
-*.exe
-
-#ignore test files
-*-main.c
