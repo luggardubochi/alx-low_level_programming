@@ -2,18 +2,18 @@
 
 /**
  * free_list - frees a list
- * @head: pointer to pointer of linked list
- * Return: void
+ * @head: head of the linked list.
+ * Return: no return.
  */
 
 void free_list(list_t *head)
 {
-	list_t *temp;
+	list_t *current;
 
-	while ((temp = head) != NULL)
+	while ((current = head) != NULL)
 	{
 		head = head->next;
-		free(temp->str);
-		free(temp);
+		free(current->str);
+		free(current);
 	}
 }
