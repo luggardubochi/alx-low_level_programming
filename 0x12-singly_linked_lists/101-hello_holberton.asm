@@ -1,3 +1,6 @@
+; Desc: 64-bit assembly program that prints
+;       Hello, Holberton followed by a new line.
+
 extern printf
 
 section .text
@@ -19,4 +22,5 @@ main:
 section .data
    msg: db "Hello, Holberton", 0
    fmt: db "%s", 10, 0
+   
    
