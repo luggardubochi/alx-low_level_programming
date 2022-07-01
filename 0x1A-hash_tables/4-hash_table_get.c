@@ -1,38 +1,34 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_get - retrieves a value associated with a key
- * @ht: the hash table you want to look into
- * @key: the key you are looking for
- *
- * Return: the value associated with the element,
- * or NULL if key couldn’t be found
+ * hash_table_get - retrieves a value associated with a key.
+ * @ht: hash table
+ * @key: the key to look for
+ * Return: the vlaue or NULL on fail
  */
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	/**
-	 * Validate table and key;
-	 */
-
+	unsigned long int idx;
 	hash_node_t *node;
-	unsigned long int index;
 
-	if (ht == NULL || key == NULL || *key == '\0')
-	{
+	if (ht == NULL || key == NULL || strlen(key) == 0)
 		return (NULL);
-	}
 
-	index = key_index((const unsigned char *)key, ht->size);
-	if (index >= ht->size)
-	{
+	idx = key_index((unsigned char *) key, ht->size);
+
+	if (ht->array[idx] == NULL || ht->array[idx] == 0)
 		return (NULL);
-	}
 
-	node = ht->array[index];
-	while (node && strcmp(node->key, key) != 0)
+	if (strcmp(ht->array[idx]->key, key) == 0)
+		return (ht->array[idx]->value);
+	node = ht->array[idx];
+	while (node != NULL)
 	{
+		if (strcmp(node->key, key) == 0)
+			return (node->value);
 		node = node->next;
 	}
-	return ((node == NULL) ? NULL : node->value);
+
+	return (NULL);
 }
