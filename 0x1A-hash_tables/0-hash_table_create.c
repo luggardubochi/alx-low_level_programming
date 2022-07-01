@@ -1,6 +1,6 @@
 /*
  * File: 0-hash_table_create.c
- * Auth: Brennan D Baraban
+ * Auth: ubochi uzochukwu
  */
 
 #include "hash_tables.h"
