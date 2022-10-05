@@ -2,51 +2,50 @@
 #include <math.h>
 
 /**
- * jump_list -  searches for a value in a sorted list of integers
- * using the Jump search algorithm.
- * @list: pointer to the head of the list to search in
- * @size: number of nodes in list
- * @value: the value to search for
- * Return: pointer to the first node where value is located
- * assuming that list will be sorted in ascending order
- * If value is not present in head or if head is NULL,
- * function will return NULL
+ * jump_list - searches for a value in an array of
+ * integers using the Jump search algorithm
+ *
+ * @list: input list
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
  */
-
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	int step = (int)(sqrt(size)), prev = 0, i = 0;
-	listint_t *tmp = list;
+	size_t index, k, m;
+	listint_t *prev;
 
-	if (list == NULL)
+	if (list == NULL || size == 0)
 		return (NULL);
 
-	for (i = tmp->index; i < step && i < (int)size; i++)
-		tmp = tmp->next;
+	m = (size_t)sqrt((double)size);
+	index = 0;
+	k = 0;
 
-	while (step < (int)size && tmp->n < value)
+	do {
+		prev = list;
+		k++;
+		index = k * m;
+
+		while (list->next && list->index < index)
+			list = list->next;
+
+		if (list->next == NULL && index != list->index)
+			index = list->index;
+
+		printf("Value checked at index [%d] = [%d]\n", (int)index, list->n);
+
+	} while (index < size && list->next && list->n < value);
+
+	printf("Value found between indexes ");
+	printf("[%d] and [%d]\n", (int)prev->index, (int)list->index);
+
+	for (; prev && prev->index <= list->index; prev = prev->next)
 	{
-		printf("Value checked array[%i] = [%i]\n", step, tmp->n);
-		prev = step;
-		step += (int)(sqrt(size));
-		for (i = tmp->index; i < step && i < (int)size - 1; i++)
-			tmp = tmp->next;
-		if (prev >= (int)size)
-			return (NULL);
+		printf("Value checked at index [%d] = [%d]\n", (int)prev->index, prev->n);
+		if (prev->n == value)
+			return (prev);
 	}
-	if (step > (int)(size - 1))
-		step = (int)size - 1;
-	printf("Value checked array[%i] = [%i]\n", step, tmp->n);
-	printf("Value found between indexes [%i] and [%i]\n", prev, step);
-	tmp = list;
-	for (i = tmp->index; i < prev; i++)
-		tmp = tmp->next;
-	for (i = prev; i <= step && tmp->n <= value; i++)
-	{
-		printf("Value checked array[%i] = [%i]\n", i, tmp->n);
-		if (tmp->n == value)
-			return (tmp);
-		tmp = tmp->next;
-	}
+
 	return (NULL);
 }
